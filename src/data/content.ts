@@ -87,7 +87,7 @@ export const focusAreas = [
   {
     title: "Security",
     description:
-      "Token-based authentication (Sanctum, JWT), hashed API keys, and per-developer credentials for internal service access.",
+      "Spring Security and token-based authentication (Sanctum, JWT), hashed API keys, and per-developer credentials for internal service access.",
   },
 ];
 
@@ -105,38 +105,51 @@ export const techStack = {
         "REST APIs",
         "System Design",
         "API Design",
-        "Data Modeling",
+        "API Documentation",
       ],
     },
     {
       category: "AI Engineering",
       items: [
         "RAG",
-        "LangChain",
-        "Hugging Face",
-        "ChromaDB",
-        "LLM Integration",
         "AI Assistants",
+        "LLM Integration",
         "MCP",
+        "Vector Databases",
+        "Vector Search",
+        "LangChain",
+        "Hugging Face Transformers",
       ],
     },
   ],
   secondary: [
     {
-      category: "Databases",
-      items: ["MySQL", "MariaDB", "SQL Server", "SQLite", "MyBatis"],
+      category: "Databases & Persistence",
+      items: ["MySQL", "MariaDB", "SQL Server", "SQLite", "MyBatis", "Views & Stored Procedures"],
     },
     {
-      category: "DevOps",
-      items: ["Docker", "Docker Compose", "Linux", "Nginx", "Git", "GitHub"],
+      category: "Caching & Messaging",
+      items: ["Redis", "RabbitMQ", "Kafka", "Solr"],
     },
     {
-      category: "Observability",
-      items: ["Elasticsearch", "Kibana", "Logstash"],
+      category: "Security & Integrations",
+      items: [
+        "Spring Security",
+        "JWT",
+        "Laravel Sanctum",
+        "Twilio",
+        "Payment Gateways",
+        "SMS & Email",
+        "Drools",
+      ],
     },
     {
-      category: "Frontend",
-      items: ["React", "React Native", "Vue.js", "TypeScript", "JavaScript"],
+      category: "DevOps & Observability",
+      items: ["Docker", "Docker Compose", "Nginx", "Linux", "Git", "GitHub", "Elasticsearch", "Kibana", "Logstash"],
+    },
+    {
+      category: "Frontend & Tools",
+      items: ["React", "React Native", "Vue.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Postman", "Jira"],
     },
   ],
 };
@@ -149,16 +162,18 @@ export const experience = [
     period: "April 2024 – Present",
     featured: true,
     summary:
-      "Working inside an existing PHP Laravel codebase while leading the migration of core services to Java Spring Boot, building new API versions with a cleaner structure.",
+      "Working inside an existing PHP Laravel codebase while contributing to the migration of core services to Java Spring Boot, building new API versions with a cleaner structure.",
     points: [
       "Design and build new REST APIs in both Laravel and Spring Boot, and maintain existing endpoints as requirements evolve.",
-      "Lead the migration of legacy Laravel modules to Spring Boot, restructuring business logic into a maintainable service layer.",
+      "Contribute to the migration of legacy Laravel modules to Spring Boot, restructuring business logic into a maintainable service layer.",
       "Analyze and document the legacy system's structure, including database schema and API flow diagrams for complex processes.",
       "Design relational database schemas and use MyBatis alongside views and stored procedures to move heavy operations out of the application layer.",
       "Build and manage Docker containers for services, and handle deployment and testing on Linux servers.",
-      "Built and deployed an internal MCP Gateway in Spring Boot 4 / Java 17 — a modular service hosting multiple independent MCP modules under shared infrastructure, with per-developer API keys and systemd-managed deployment.",
+      "Write API documentation to support handoff between backend, frontend, and integration teams.",
+      "Built and deployed an internal MCP Gateway in Spring Boot 4 / Java 21 — a modular service hosting multiple independent MCP modules under shared infrastructure, with per-developer API keys and systemd-managed deployment.",
+      "Lead the development of an annuity application using Spring Boot 4 and Java 21, driving backend architecture and API design while integrating MySQL for persistence, Redis for caching, and Docker/Nginx for containerized deployment.",
     ],
-    tech: ["Java", "Spring Boot", "PHP", "Laravel", "MyBatis", "Docker", "Linux", "MCP"],
+    tech: ["Java", "Spring Boot", "PHP", "Laravel", "MyBatis", "MySQL", "Redis", "Docker", "Linux", "MCP"],
   },
   {
     company: "Auto4Utos",
@@ -215,38 +230,41 @@ export const aiEngineering = {
 
 export const featuredProject = {
   eyebrow: "Personal Project · Open Source",
-  title: "RAG AI Agent — Self-Hosted AI Assistant",
+  title: "RAG AI Assistant",
   github: "https://github.com/ihab-hachem/rag_ai_agent",
   description:
-    "A self-hosted retrieval-augmented generation assistant built to bring document-based question answering to business applications without depending on a third-party AI platform. It ingests documents, indexes them as embeddings, and answers questions by retrieving relevant context before generating a response — all served behind a REST API.",
+    "A self-hosted retrieval-augmented generation assistant built in Java and Spring Boot to bring document-based question answering to business applications without depending on a third-party AI platform. It uses LangChain and Hugging Face Transformers for embeddings, a vector database for semantic search, and MCP to let the assistant retrieve context from documents, a codebase, and databases before generating a response — all served behind a REST API.",
   capabilities: [
     "Document ingestion & indexing",
     "Vector search over embedded content",
+    "Codebase & database retrieval via MCP",
     "Context-grounded question answering",
     "REST API for application integration",
     "Fully self-hosted, containerized deployment",
   ],
   tech: [
-    "Python",
-    "FastAPI",
+    "Java",
+    "Spring Boot 3",
+    "JDK 17",
     "LangChain",
     "Hugging Face Transformers",
-    "ChromaDB",
+    "Vector Database",
     "MySQL",
     "Docker",
     "Docker Compose",
     "Nginx",
+    "MCP",
   ],
   note: "A personal, open-source project — shared here to demonstrate the architecture, not as a claim of production usage.",
 };
 
 export const mcpArchitecture = {
   eyebrow: "Professional Context · Architecture Concept",
-  title: "AI Assistant & MCP Architecture",
+  title: "MCP Gateway & AI Tooling",
   description:
-    "Alongside the RAG project above, I've worked on AI assistant architecture in a professional setting — connecting retrieval, database access, Jira, and MCP-based tools so an assistant can act on real systems rather than just answer questions in isolation. The MCP Gateway listed under Moobitek is the infrastructure piece: a Spring Boot service that hosts multiple independent MCP modules behind shared authentication, so different tools can be exposed to AI clients like Claude Desktop without each one reinventing its own server.",
-  note: "This describes an architectural pattern from professional work, not a public repository — it's kept separate from the open-source RAG project above.",
-  flow: ["RAG Layer", "Database Access", "Jira Integration", "MCP Tools", "AI Assistant"],
+    "Alongside the RAG project above, I've worked on AI assistant architecture in a professional setting — connecting retrieval, database access, codebase access, Jira, and MCP-based tools so an assistant can act on real systems rather than just answer questions in isolation. The MCP Gateway built at Moobitek is the infrastructure piece: a modular Spring Boot service that hosts multiple independent MCP modules behind shared authentication, letting tools be exposed to AI clients like Claude Desktop, and letting new MCP modules be added without changing the core infrastructure.",
+  note: "This describes an architectural pattern from professional work at Moobitek, not a public repository — it's kept separate from the open-source RAG project above.",
+  flow: ["RAG Layer", "Database Access", "Codebase Access", "Jira Integration", "MCP Tools", "AI Assistant"],
 };
 
 export const featuredEarlierProjects = [
