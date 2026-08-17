@@ -20,7 +20,7 @@ export function Nav() {
   return (
     <header className="nav">
       <div className="nav__inner container">
-        <a href="#top" className="nav__brand" aria-label={`${personal.name} — home`}>
+        <a href="#top" className="nav__brand" aria-label={`${personal.name}, home`}>
           <span className="nav__mark">IH</span>
           <span className="nav__name">Ihab Hachem</span>
         </a>

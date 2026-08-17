@@ -1,6 +1,6 @@
 // All site copy lives here so content can be updated without touching
 // component/layout code. Every claim below is drawn directly from
-// Ihab's CV — nothing here is invented (no fabricated metrics, teams,
+// Ihab's CV. Nothing here is invented (no fabricated metrics, teams,
 // clients, or production claims).
 
 export const personal = {
@@ -12,8 +12,11 @@ export const personal = {
   phone: "+961 70 871 687",
   linkedin: "https://www.linkedin.com/in/ihab-hachem",
   github: "https://github.com/ihab-hachem",
-  // Place the exported CV PDF at this exact path — see /public/resume/README.txt
-  resumePath: "/resume/Ihab-Hachem-CV.pdf",
+  // Place the exported CV PDF at this exact path, see /public/resume/README.txt
+  // Uses Vite's BASE_URL so this resolves correctly whether the site is
+  // deployed at a domain root or under a GitHub Pages project path like
+  // /portfolio/ — a hardcoded absolute path would 404 on project pages.
+  resumePath: `${import.meta.env.BASE_URL}resume/Ihab-Hachem-CV.pdf`,
 };
 
 export const hero = {
@@ -22,7 +25,7 @@ export const hero = {
   role: "Senior Backend & Software Engineer",
   sub: "Java & Spring Boot · PHP & Laravel · Distributed Systems · AI Engineering",
   description:
-    "I design and build backend systems — APIs, services, and the databases underneath them — and I've spent the last few years moving a production codebase from Laravel to Spring Boot without breaking what already worked. Lately that same instinct for clean architecture has carried into AI: retrieval-augmented systems, self-hosted assistants, and MCP-based tooling built as backend infrastructure, not experiments.",
+    "I design and build backend systems: APIs, services, and the databases underneath them. I've spent the last few years moving a production codebase from Laravel to Spring Boot without breaking what already worked. Lately that same instinct for clean architecture has carried into AI: retrieval-augmented systems, self-hosted assistants, and MCP-based tooling built as backend infrastructure, not experiments.",
   facts: [
     { label: "Based in", value: "Zahle, Lebanon" },
     { label: "Currently", value: "Backend Engineer @ Moobitek" },
@@ -35,8 +38,8 @@ export const about = {
   eyebrow: "About",
   title: "Backend-first, systems-minded",
   paragraphs: [
-    "My work sits mostly below the interface — REST APIs, service boundaries, database schemas, and the deployment pipeline that gets all of it onto a server reliably. At Moobitek I work inside a Laravel codebase while leading its migration to Spring Boot, which means spending as much time reading and documenting existing systems as writing new ones.",
-    "I like taking a requirement that's really a business problem and turning it into something a database can enforce and an API can expose cleanly — schemas with proper relations, views and stored procedures where they earn their place, containers that make deployment repeatable instead of manual. The same approach has carried over into AI work: treating retrieval and language models as another backend component to integrate carefully, not a black box bolted on top.",
+    "My work sits mostly below the interface. REST APIs, service boundaries, database schemas, and the deployment pipeline that gets all of it onto a server reliably. At Moobitek I work inside a Laravel codebase while leading its migration to Spring Boot, which means spending as much time reading and documenting existing systems as writing new ones.",
+    "I like taking a requirement that's really a business problem and turning it into something a database can enforce and an API can expose cleanly. Schemas with proper relations, views and stored procedures where they earn their place, containers that make deployment repeatable instead of manual. The same approach has carried over into AI work: treating retrieval and language models as another backend component to integrate carefully, not a black box bolted on top.",
   ],
   tags: [
     "API Development",
@@ -62,12 +65,12 @@ export const focusAreas = [
   {
     title: "Distributed Systems",
     description:
-      "Working with services that need to communicate reliably — API boundaries, containerized deployments, and predictable service behavior.",
+      "Working with services that need to communicate reliably, API boundaries, containerized deployments, and predictable service behavior.",
   },
   {
     title: "API Design",
     description:
-      "Designing endpoints around real consumers — mobile apps, admin dashboards, and internal tools — with documentation that keeps teams unblocked.",
+      "Designing endpoints around real consumers, mobile apps, admin dashboards, and internal tools, with documentation that keeps teams unblocked.",
   },
   {
     title: "Database Engineering",
@@ -77,7 +80,7 @@ export const focusAreas = [
   {
     title: "AI Engineering",
     description:
-      "Building RAG pipelines and AI assistants as backend systems — document ingestion, vector search, and LLM integration behind a REST API.",
+      "Building RAG pipelines and AI assistants as backend systems: document ingestion, vector search, and LLM integration behind a REST API.",
   },
   {
     title: "DevOps & Infrastructure",
@@ -170,7 +173,7 @@ export const experience = [
       "Design relational database schemas and use MyBatis alongside views and stored procedures to move heavy operations out of the application layer.",
       "Build and manage Docker containers for services, and handle deployment and testing on Linux servers.",
       "Write API documentation to support handoff between backend, frontend, and integration teams.",
-      "Built and deployed an internal MCP Gateway in Spring Boot 4 / Java 21 — a modular service hosting multiple independent MCP modules under shared infrastructure, with per-developer API keys and systemd-managed deployment.",
+      "Built and deployed an internal MCP Gateway in Spring Boot 4 / Java 21, a modular service hosting multiple independent MCP modules under shared infrastructure, with per-developer API keys and systemd-managed deployment.",
       "Lead the development of an annuity application using Spring Boot 4 and Java 21, driving backend architecture and API design while integrating MySQL for persistence, Redis for caching, and Docker/Nginx for containerized deployment.",
     ],
     tech: ["Java", "Spring Boot", "PHP", "Laravel", "MyBatis", "MySQL", "Redis", "Docker", "Linux", "MCP"],
@@ -215,7 +218,7 @@ export const aiEngineering = {
   eyebrow: "AI Engineering",
   title: "AI Engineering & Intelligent Systems",
   description:
-    "My AI work is backend work — treating retrieval, embeddings, and language models as components that need clean integration, not a separate track from the rest of the system. That means self-hosted deployments, document-based knowledge, and REST APIs in front of the AI layer, the same way I'd approach any other service.",
+    "My AI work is backend work. Treating retrieval, embeddings, and language models as components that need clean integration, not a separate track from the rest of the system. That means self-hosted deployments, document-based knowledge, and REST APIs in front of the AI layer, the same way I'd approach any other service.",
   capabilities: [
     "Retrieval-Augmented Generation (RAG)",
     "AI assistants",
@@ -233,7 +236,7 @@ export const featuredProject = {
   title: "RAG AI Assistant",
   github: "https://github.com/ihab-hachem/rag_ai_agent",
   description:
-    "A self-hosted retrieval-augmented generation assistant built in Java and Spring Boot to bring document-based question answering to business applications without depending on a third-party AI platform. It uses LangChain and Hugging Face Transformers for embeddings, a vector database for semantic search, and MCP to let the assistant retrieve context from documents, a codebase, and databases before generating a response — all served behind a REST API.",
+    "A self-hosted retrieval-augmented generation assistant built in Java and Spring Boot to bring document-based question answering to business applications without depending on a third-party AI platform. It uses LangChain and Hugging Face Transformers for embeddings, a vector database for semantic search, and MCP to let the assistant retrieve context from documents, a codebase, and databases before generating a response, all served behind a REST API.",
   capabilities: [
     "Document ingestion & indexing",
     "Vector search over embedded content",
@@ -255,15 +258,15 @@ export const featuredProject = {
     "Nginx",
     "MCP",
   ],
-  note: "A personal, open-source project — shared here to demonstrate the architecture, not as a claim of production usage.",
+  note: "A personal, open-source project, shared here to demonstrate the architecture, not as a claim of production usage.",
 };
 
 export const mcpArchitecture = {
   eyebrow: "Professional Context · Architecture Concept",
   title: "MCP Gateway & AI Tooling",
   description:
-    "Alongside the RAG project above, I've worked on AI assistant architecture in a professional setting — connecting retrieval, database access, codebase access, Jira, and MCP-based tools so an assistant can act on real systems rather than just answer questions in isolation. The MCP Gateway built at Moobitek is the infrastructure piece: a modular Spring Boot service that hosts multiple independent MCP modules behind shared authentication, letting tools be exposed to AI clients like Claude Desktop, and letting new MCP modules be added without changing the core infrastructure.",
-  note: "This describes an architectural pattern from professional work at Moobitek, not a public repository — it's kept separate from the open-source RAG project above.",
+    "Alongside the RAG project above, I've worked on AI assistant architecture in a professional setting, connecting retrieval, database access, codebase access, Jira, and MCP-based tools so an assistant can act on real systems rather than just answer questions in isolation. The MCP Gateway built at Moobitek is the infrastructure piece: a modular Spring Boot service that hosts multiple independent MCP modules behind shared authentication, letting tools be exposed to AI clients like Claude Desktop, and letting new MCP modules be added without changing the core infrastructure.",
+  note: "This describes an architectural pattern from professional work at Moobitek, not a public repository. It's kept separate from the open-source RAG project above.",
   flow: ["RAG Layer", "Database Access", "Codebase Access", "Jira Integration", "MCP Tools", "AI Assistant"],
 };
 
@@ -272,7 +275,7 @@ export const featuredEarlierProjects = [
     title: "Multi-Service & E-Commerce Platforms",
     period: "2023",
     problem:
-      "Several client businesses needed mobile-first backends — a multi-service marketplace, a multivendor e-commerce app, and a standalone e-commerce backend — each with admin tooling.",
+      "Several client businesses needed mobile-first backends: a multi-service marketplace, a multivendor e-commerce app, and a standalone e-commerce backend, each with admin tooling.",
     solution:
       "Built REST APIs in Laravel for mobile and admin clients, covering user, stock, and order modules, with the supporting infrastructure to take each one to production.",
     contribution: [
@@ -284,7 +287,7 @@ export const featuredEarlierProjects = [
     tech: ["PHP", "Laravel", "MySQL", "REST APIs"],
   },
   {
-    title: "Multivendor E-Commerce — Admin Dashboard",
+    title: "Multivendor E-Commerce, Admin Dashboard",
     period: "2023",
     problem:
       "The multivendor platform's operators needed a way to manage categories, vendors, items, users, and homepage promotion without touching the database directly.",
@@ -336,19 +339,19 @@ export const systemsDiagram = {
   eyebrow: "Systems Thinking",
   title: "How I Think About Systems",
   description:
-    "A conceptual view of how I lay out a backend system — not a diagram of one specific production system, but the shape most of my work follows: a client talks to an API layer, the API delegates to backend services, services own their data, and an AI/RAG layer sits alongside as another service rather than a special case. Hover a node for what I consider when I'm building it.",
+    "A conceptual view of how I lay out a backend system, not a diagram of one specific production system, but the shape most of my work follows: a client talks to an API layer, the API delegates to backend services, services own their data, and an AI/RAG layer sits alongside as another service rather than a special case. Hover a node for what I consider when I'm building it.",
   nodes: [
     {
       id: "client",
       label: "Client",
-      detail: "Web, mobile, or admin dashboard — the API contract is designed around what each client actually needs.",
+      detail: "Web, mobile, or admin dashboard. The API contract is designed around what each client actually needs.",
       x: 60,
       y: 190,
     },
     {
       id: "api",
       label: "API Layer",
-      detail: "REST endpoints, request validation, and authentication — the boundary between clients and business logic.",
+      detail: "REST endpoints, request validation, and authentication. The boundary between clients and business logic.",
       x: 230,
       y: 90,
     },
@@ -369,7 +372,7 @@ export const systemsDiagram = {
     {
       id: "ai",
       label: "AI / RAG Layer",
-      detail: "Retrieval and LLM calls treated as another backend dependency — embeddings, vector search, and a clear API boundary.",
+      detail: "Retrieval and LLM calls treated as another backend dependency: embeddings, vector search, and a clear API boundary.",
       x: 630,
       y: 290,
     },
@@ -397,7 +400,7 @@ export const philosophy = {
   principles: [
     {
       title: "Start simple, earn the complexity",
-      description: "A system should only get more complex when the requirements actually demand it — not in anticipation of scale that hasn't arrived.",
+      description: "A system should only get more complex when the requirements actually demand it, not in anticipation of scale that hasn't arrived.",
     },
     {
       title: "APIs follow the business, not the database",
@@ -413,7 +416,7 @@ export const philosophy = {
     },
     {
       title: "Use AI where it's actually useful",
-      description: "RAG and LLM integration earn their place when they solve a real retrieval or knowledge problem — not because AI is available.",
+      description: "RAG and LLM integration earn their place when they solve a real retrieval or knowledge problem, not because AI is available.",
     },
     {
       title: "If you can't observe it, you don't really know it works",
@@ -424,7 +427,7 @@ export const philosophy = {
 
 export const education = {
   degree: "Master of Science in Computer and Communication Engineering",
-  school: "AUL — Arts, Sciences and Technology University",
+  school: "AUL: Arts, Sciences and Technology University",
   location: "Beirut, Lebanon",
   period: "October 2021 – February 2023",
   note: "Thesis on a digital identity platform designed to replace physical ID documents.",

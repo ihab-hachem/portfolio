@@ -11,7 +11,7 @@ export function Focus() {
           <p className="eyebrow">Engineering Focus</p>
           <h2 className="section-title">Where I spend my time</h2>
           <p className="section-lede">
-            Backend systems and the architecture decisions around them — from the API contract down to the
+            Backend systems and the architecture decisions around them, from the API contract down to the
             database schema.
           </p>
         </div>

@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-// Minimal hand-rolled icon set — kept tiny and dependency-free rather than
+// Minimal hand-rolled icon set, kept tiny and dependency-free rather than
 // pulling in a full icon library for a handful of glyphs.
 
 const base = (props: SVGProps<SVGSVGElement>) => ({

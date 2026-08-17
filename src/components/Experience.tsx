@@ -48,7 +48,8 @@ function ExperienceItem({ job }: { job: (typeof experience)[number] }) {
           <div>
             <h3 className="timeline-item__role">{job.role}</h3>
             <p className="timeline-item__company">
-              {job.company} <span className="timeline-item__location">— {job.location}</span>
+              {job.company}
+              <span className="timeline-item__location">, {job.location}</span>
             </p>
           </div>
           <p className="timeline-item__period">{job.period}</p>

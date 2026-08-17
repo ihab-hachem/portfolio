@@ -11,7 +11,7 @@ export function Education() {
           <p className="eyebrow">Education</p>
           <h3 className="education__degree">{education.degree}</h3>
           <p className="education__school">
-            {education.school} — {education.location}
+            {education.school}, {education.location}
           </p>
           <p className="education__period">{education.period}</p>
           <p className="education__note">{education.note}</p>

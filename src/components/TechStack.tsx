@@ -11,7 +11,7 @@ export function TechStack() {
           <p className="eyebrow">Technology</p>
           <h2 className="section-title">Stack, by what it's for</h2>
           <p className="section-lede">
-            Grouped by role rather than dumped in one list — backend and architecture are where most of the
+            Grouped by role rather than dumped in one list. Backend and architecture are where most of the
             depth is.
           </p>
         </div>
@@ -48,7 +48,7 @@ function StackGroup({
       <p className="stack-group__label">{category}</p>
       <ul className="stack-group__items">
         {items.map((item) => (
-          <li key={item} className={dominant ? "tag tag--accent" : "tag"}>
+          <li key={item} className="tag">
             {item}
           </li>
         ))}

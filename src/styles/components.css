@@ -92,6 +92,14 @@
   border: 1px solid var(--line);
   background: var(--surface);
   color: var(--ink);
+  flex: none;
+  padding: 0;
+}
+
+.nav__toggle svg {
+  width: 20px;
+  height: 20px;
+  flex: none;
 }
 
 .nav__mobile {
@@ -401,11 +409,6 @@
   padding: 22px;
 }
 
-.stack-group--dominant {
-  padding: 26px;
-  border-color: var(--ink);
-}
-
 .stack-group__label {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -415,23 +418,10 @@
   margin-bottom: 14px;
 }
 
-.stack-group--dominant .stack-group__label {
-  color: var(--accent-ink);
-}
-
 .stack-group__items {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-
-.stack-group--dominant .stack-group__items {
-  gap: 9px;
-}
-
-.stack-group--dominant .tag {
-  font-size: 13.5px;
-  padding: 7px 12px;
 }
 
 @media (max-width: 900px) {

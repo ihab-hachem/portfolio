@@ -12,7 +12,7 @@ export function Projects() {
           <p className="eyebrow">Selected Projects</p>
           <h2 className="section-title">Freelance &amp; independent work</h2>
           <p className="section-lede">
-            Built before and alongside current employment — mostly PHP/Laravel backends paired with React or
+            Built before and alongside current employment, mostly PHP/Laravel backends paired with React or
             React Native clients.
           </p>
         </div>

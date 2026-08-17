@@ -224,7 +224,7 @@ button:focus-visible,
   align-items: center;
   font-family: var(--font-mono);
   font-size: 12.5px;
-  color: var(--muted);
+  color: var(--ink);
   background: var(--surface-alt);
   border: 1px solid var(--line);
   border-radius: 5px;
