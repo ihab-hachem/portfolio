@@ -9,7 +9,7 @@ export function Experience() {
     <section id="experience" className="section experience">
       <div className="container">
         <div ref={headRef} className="section-head reveal">
-          <p className="eyebrow">Professional Experience</p>
+          <p className="eyebrow">Experience</p>
           <h2 className="section-title">Where the work happened</h2>
         </div>
 
@@ -20,9 +20,9 @@ export function Experience() {
         </div>
 
         <div ref={teachRef} className="teaching reveal">
-          <p className="teaching__label">Teaching &amp; Mentoring</p>
+          <p className="teaching__label">{teaching.label}</p>
           <div className="teaching__list">
-            {teaching.map((t) => (
+            {teaching.items.map((t) => (
               <div key={t.org} className="teaching__item">
                 <span className="teaching__org">{t.org}</span>
                 <span className="teaching__role">{t.role}</span>

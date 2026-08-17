@@ -11,10 +11,7 @@ export function Contact() {
         <div ref={ref} className="contact__intro reveal">
           <p className="eyebrow">Contact</p>
           <h2 className="section-title">Talk backend systems</h2>
-          <p className="section-lede">
-            Open to senior backend and systems engineering roles. The fastest way to reach me is email or
-            LinkedIn.
-          </p>
+          <p className="section-lede">Open to senior backend and systems engineering roles.</p>
         </div>
 
         <div className="contact__grid">

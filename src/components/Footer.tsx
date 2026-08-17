@@ -1,8 +1,9 @@
-import { personal } from "../data/content";
+import { education, languages, personal } from "../data/content";
 import { IconGithub, IconLinkedin, IconMail } from "./icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const langs = languages.map((l) => `${l.name} (${l.level})`).join(" · ");
 
   return (
     <footer className="footer">
@@ -10,6 +11,9 @@ export function Footer() {
         <div>
           <p className="footer__name">{personal.name}</p>
           <p className="footer__role">Senior Backend & Software Engineer</p>
+          <p className="footer__meta">
+            {education.degree} — {education.school} ({education.period}) · {langs}
+          </p>
         </div>
 
         <div className="footer__links">
